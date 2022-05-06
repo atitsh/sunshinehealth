@@ -11,35 +11,47 @@
 </head>
 
 <body>
+    <h1>Sunshine Health</h1>
+    <h2>View Products</h2>
     <table max-width="800px">
-    <tr>
+        <tr>
 
-        <td>
-            <img src="https://atitsh.github.io/sunshinehealth/images/zyrtec_main.webp" width="200px"></img>
-        </td>
+            <td style="padding: 10px;">
+                <img src="https://atitsh.github.io/sunshinehealth/images/zyrtec_main.webp" width="200px"></img>
+            </td>
 
-        <td>
-            <img src="https://atitsh.github.io/sunshinehealth/images/allegra.webp" width="200px"></img>
+            <td style="padding: 10px;">
+                <img src="https://atitsh.github.io/sunshinehealth/images/allegra.webp" width="200px"></img>
 
-        </td>
+            </td>
 
-        <td>
-            <img src="https://atitsh.github.io/sunshinehealth/images/claritin.1" width="200px"></img>
-        </td>
+            <td style="padding: 10px;">
+                <img src="https://atitsh.github.io/sunshinehealth/images/claritin.1" width="200px"></img>
+            </td>
 
-    </tr>
-    <tr>
-        <td align=center>
-            <input type="button" value="View Details" onclick="track_event('zyrtec','50580-779-12')">
-        </td>
-        <td align=center>
-            <input type="button" value="View Details" onclick="track_event('allegra', '16590-852-30')">
-        </td>
-        <td align=center>
-            <input type="button" value="View Details" onclick="track_event('claritin', '11523-0007-8')">
-        </td>
-    </tr>
-</table>
+        </tr>
+        <tr>
+            <td align=center>
+                <input type="button" value="View Details" onclick="track_event('zyrtec','50580-779-12')">
+            </td>
+            <td align=center>
+                <input type="button" value="View Details" onclick="track_event('allegra', '16590-852-30')">
+            </td>
+            <td align=center>
+                <input type="button" value="View Details" onclick="track_event('claritin', '11523-0007-8')">
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="3" align="center">
+                <br /><br />
+                <form action="/index.html">
+                    <input type="button" style="padding: 15px" value="Check Out">
+                </form>
+            </td>
+        </tr>
+
+    </table>
 
     <script>
       function track_event(product_name, product_ndc){
