@@ -13,11 +13,12 @@
 <body>
 
     <body>
-        <h1>Sign up for the latest information on Sunshine Health!</h1>
-        <p>Enter your contact information if you would like to receive alerts.</p>
+        <h1>Check Out</h1>
+        <p>Enter your contact information to checkout.</p>
 
         <form name="healthsignup" onsubmit="identify(event)">
-            <br> <br> Name: <input name="fullname" required="" size="60" type="text" />
+            <br> <br> First Name: <input name="firstname" required="" size="60" type="text" />
+            <br> <br> Last Name: <input name="lastname" required="" size="60" type="text" />
             <br> <br> Email: <input name="email" required="" size="60" type="email" />
             <br> <br>
             <input name="submit" type="submit" value="submit" /> </form>
@@ -28,18 +29,21 @@
              
                e.preventDefault();
                var form = e.target;
+               var first = form["firstname"].value;
+               var last = form["lastname"].value;
                var email = form["email"].value;
-               var fullname = form["fullname"].value;
 
                var user = {
                  email: email,
-                 name: fullname
+                 firstname: first,
+                 lastname: last  
                };
 
               // Identify call
               analytics.identify('1', {
                   email: email,
-                  name: fullname
+                  firstname: first,
+                  lastname: last
                 });
                 
               //  Sign-up Track call
