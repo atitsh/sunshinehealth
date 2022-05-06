@@ -32,13 +32,13 @@
         </tr>
         <tr>
             <td align=center>
-                <input type="button" value="View Details" onclick="track_event('zyrtec','50580-779-12')">
+                <input type="button" value="Add to Cart" onclick="track_event('zyrtec','50580-779-12')">
             </td>
             <td align=center>
-                <input type="button" value="View Details" onclick="track_event('allegra', '16590-852-30')">
+                <input type="button" value="Add to Cart" onclick="track_event('allegra', '16590-852-30')">
             </td>
             <td align=center>
-                <input type="button" value="View Details" onclick="track_event('claritin', '11523-0007-8')">
+                <input type="button" value="Add to Cart" onclick="track_event('claritin', '11523-0007-8')">
             </td>
         </tr>
 
@@ -55,7 +55,7 @@
 
     <script>
       function track_event(product_name, product_ndc){
-        analytics.track('Product Viewed', {
+        analytics.track('Product Carted', {
             name: product_name,
             ndc: product_ndc
           });
