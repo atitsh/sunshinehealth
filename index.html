@@ -16,7 +16,7 @@
         <h1>Sign up for the latest information on Sunshine Health!</h1>
         <p>Enter your contact information if you would like to receive alerts.</p>
 
-        <form name="healthsignup" onsubmit="analytics.track('sign_up')">
+        <form name="healthsignup" onsubmit="identify(event)">
             <br> <br> Name: <input name="fullname" required="" size="60" type="text" />
             <br> <br> Email: <input name="email" required="" size="60" type="email" />
             <br> <br>
@@ -34,12 +34,13 @@
                  email: email,
                  name: fullname
                };
-            // // Identify call
-            //     analytics.identify('12345', {
-            //       email: email,
-            //       name: fullname,
-            //       shoeType: shoeType
-            //     });
+            // Identify call
+                analytics.identify('1', {
+                  email: email,
+                  name: fullname,
+                  shoeType: shoeType
+                });
+                
             //  Sign-up Track call
             analytics.track('sign_up', user, function() {
                 window.location.href = "";
