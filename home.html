@@ -11,7 +11,15 @@
 </head>
 
 <body>
+    <input type="button" value="View Product-1" onclick="track_event('Tylenol')">
 
+    <script>
+      function track_event(product_name){
+        analytics.track('Product Viewed', {
+            name: product_name,
+          });
+      }
+    </script>
 </body>
 
 </html>
