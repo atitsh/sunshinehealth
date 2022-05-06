@@ -11,8 +11,35 @@
 </head>
 
 <body>
-    <img src="images/zyrtec_main.webp" width="200px"></img>
-    <input type="button" value="View Product-1" onclick="track_event('Tylenol')">
+    <table max-width="800px">
+    <tr>
+
+        <td>
+            <img src="https://atitsh.github.io/sunshinehealth/images/zyrtec_main.webp" width="200px"></img>
+        </td>
+
+        <td>
+            <img src="https://atitsh.github.io/sunshinehealth/images/allegra.webp" width="200px"></img>
+
+        </td>
+
+        <td>
+            <img src="https://atitsh.github.io/sunshinehealth/images/claritin.1" width="200px"></img>
+        </td>
+
+    </tr>
+    <tr>
+        <td align=center>
+            <input type="button" value="zyrtec" onclick="msg('zyrtec')">
+        </td>
+        <td align=center>
+            <input type="button" value="allegra" onclick="msg('allegra')">
+        </td>
+        <td align=center>
+            <input type="button" value="claritin" onclick="msg('claritin')">
+        </td>
+    </tr>
+</table>
 
     <script>
       function track_event(product_name){
