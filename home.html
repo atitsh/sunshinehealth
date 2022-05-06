@@ -30,21 +30,22 @@
     </tr>
     <tr>
         <td align=center>
-            <input type="button" value="View Details" onclick="msg('zyrtec')">
+            <input type="button" value="View Details" onclick="track_event('zyrtec','50580-779-12')">
         </td>
         <td align=center>
-            <input type="button" value="View Details" onclick="msg('allegra')">
+            <input type="button" value="View Details" onclick="track_event('allegra', '16590-852-30')">
         </td>
         <td align=center>
-            <input type="button" value="View Details" onclick="msg('claritin')">
+            <input type="button" value="View Details" onclick="track_event('claritin', '11523-0007-8')">
         </td>
     </tr>
 </table>
 
     <script>
-      function track_event(product_name){
+      function track_event(product_name, product_ndc){
         analytics.track('Product Viewed', {
             name: product_name,
+            ndc: product_ndc
           });
       }
     </script>
