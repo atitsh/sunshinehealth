@@ -38,7 +38,7 @@
                 <input type="button" value="Add to Cart" onclick="track_event('allegra', '16590-852-30')">
             </td>
             <td align=center>
-                <input type="button" value="Add to Cart" onclick="track_event('claritin', '11523-0007-8')">
+                <input type="button" value="Add to Cart" onclick="track_event('claritin', '11523-0007-80')">
             </td>
         </tr>
 
@@ -61,10 +61,45 @@
           });
           
           
-   // Ecommerce Events
+        // Ecommerce Events
         analytics.track('Products Searched', {
-            query: 'kith air force 1'
+            query: 'allergy medications'
          });
+          
+          
+        analytics.track('Product List Viewed', {
+             list_id: 'Allergy Medications',
+             category: 'Popular',
+             products: [ {
+                   product_id: '39011',
+                   ndc: '50580-779-12',
+                   name: 'Zyrtec',
+                   price: 50.00,
+                   position: 1,
+                   category: 'Allergy Medication',
+                   url: '/zyrtec',
+                   image_url: '/images/zyrtec.jpg'
+             }, {
+                   product_id: '39012',
+                   ndc: '16590-852-30',
+                   name: 'Allegra',
+                   price: 55.00,
+                   position: 2,
+                   category: 'Allergy Medication',
+                   url: '/allegra',
+                   image_url: '/images/allegra.jpg'
+             }, {
+                   product_id: '39012',
+                   ndc: '11523-0007-80',
+                   name: 'Claritin',
+                   price: 55.00,
+                   position: 3,
+                   category: 'Allergy Medication',
+                   url: '/claritin',
+                   image_url: '/images/claritin.jpg'
+             } ] 
+        });  
+          
       }
     </script>
 </body>
