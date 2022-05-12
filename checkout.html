@@ -33,6 +33,7 @@
                var first = form["firstname"].value;
                var last = form["lastname"].value;
                var email = form["email"].value;
+               var id = Math.floor(Math.random() * 10) + 1; 
 
                var user = {
                  email: email,
@@ -41,7 +42,7 @@
                };
 
               // Identify call
-              analytics.identify('1', {
+              analytics.identify(id, {
                   email: email,
                   firstname: first,
                   lastname: last
