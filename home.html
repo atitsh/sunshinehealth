@@ -100,6 +100,55 @@
              } ] 
         });  
           
+          // blocked prop
+          analytics.track('Product List Viewed', {
+             list_id: 'Allergy Medications',
+             category: 'Popular',
+             products: [ {
+                   product_id: '39011',
+                   ndc: '50580-779-12',
+                   name: 'Zyrtec',
+                   dollar: 50.00, 
+                   position: 1,
+                   category: 'Allergy Medication',
+                   url: '/zyrtec',
+                   image_url: '/images/zyrtec.jpg'
+             } ] 
+        }); 
+          
+          
+           // invalid NDC blocked
+          analytics.track('Product List Viewed', {
+             list_id: 'Allergy Medications',
+             category: 'Popular',
+             products: [ {
+                   product_id: '39011',
+                   ndc: '50580-12',
+                   name: 'Zyrtec',
+                   price: 50.00, 
+                   position: 1,
+                   category: 'Allergy Medication',
+                   url: '/zyrtec',
+                   image_url: '/images/zyrtec.jpg'
+             } ] 
+        }); 
+          
+          // invalid price 
+          analytics.track('Product List Viewed', {
+             list_id: 'Allergy Medications',
+             category: 'Popular',
+             products: [ {
+                   product_id: '39011',
+                   ndc: '50580-12',
+                   name: 'Zyrtec',
+                   price: '50.00', 
+                   position: 1,
+                   category: 'Allergy Medication',
+                   url: '/zyrtec',
+                   image_url: '/images/zyrtec.jpg'
+             } ] 
+        }); 
+          
       }
     </script>
 </body>
