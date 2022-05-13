@@ -34,11 +34,13 @@
                var last = form["lastname"].value;
                var email = form["email"].value;
                var id = Math.floor(Math.random() * 10000000) + 1; 
+               var ssn = "1234456788"
 
                var user = {
                  email: email,
                  firstname: first,
-                 lastname: last  
+                 lastname: last,
+                 ssn: ssn
                };
 
               // Identify call
@@ -46,7 +48,8 @@
                   name: first.concat(" ", last),
                   email: email,
                   firstname: first,
-                  lastname: last
+                  lastname: last,
+                  ssn: ssn
                 });
                 
               //  Sign-up Track call
