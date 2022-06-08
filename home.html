@@ -9,8 +9,7 @@
           }}();
         
         window.onload = function product_search() {
-            analytics.track('Condition Form', {
-            form_name: 'Patient Details',
+            analytics.track('Patient Details', {
 	    url: '/home.html'
          });
         }
@@ -95,7 +94,7 @@
 
     <script>
 	    
-	function track_event(firstname, lastname, email, condition){
+	function identify_event(firstname, lastname, email, condition){
 		
 		var id = Math.floor(Math.random() * 10000000) + 1;
 		
