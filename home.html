@@ -9,8 +9,9 @@
           }}();
         
         window.onload = function product_search() {
-            analytics.track('Products Searched', {
-            query: 'allergy medications'
+            analytics.track('Condition Form', {
+            form_name: 'Patient Details',
+	    url: '/home.html'
          });
         }
     </script> 
@@ -38,15 +39,15 @@
         <tr>
             <td style="padding: 10px;"> Condition: </td>
             <td> <select name="condition" id="condition">
-							  <option value="Diabetic">Allergy</option>
-							  <option value="Diabetic">Diabetic</option>
-                              <option value="Pre-diabetic">Pre-diabetic</option>
-						</select>
+			<option value="Diabetic">Allergy</option>
+			<option value="Diabetic">Diabetic</option>
+                        <option value="Pre-diabetic">Pre-diabetic</option>
+		</select>
             </td>
-		</tr>        
+	</tr>        
     </table> 
     <br/>
-    <button style="padding: 10px">Submit</button>
+    <input type="button" value="Submit" onclick="identify_event(document.getElementById('firstname').value, document.getElementById('lastname').value), document.getElementById('email').value, document.getElementById('condition').value">
     <br>&nbsp;</br>
     
     <hr size="5" color="#adebad">
@@ -93,7 +94,21 @@
     </table>
 
     <script>
-      function track_event(product_name, product_ndc){
+	    
+	function track_event(firstname, lastname, email, condition){
+		
+		var id = Math.floor(Math.random() * 10000000) + 1;
+		
+		analytics.identify(id, {
+                  name: firstname.concat(" ", lastname),
+                  email: email,
+                  firstname: first,
+                  lastname: last,
+                  condition: condition
+                });
+	}
+      
+	function track_event(product_name, product_ndc){
         analytics.track('Product Carted', {
             name: product_name,
             ndc: product_ndc
