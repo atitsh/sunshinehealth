@@ -25,15 +25,15 @@
 	<table max-width="800px">
 		<tr>
             <td style="padding: 10px;"> First Name: </td>
-            <td> <input name="firstname" required="" size="50" type="text" /></td>
+            <td> <input id="firstname" name="firstname" required="" size="50" type="text" /></td>
 		</tr>        
         <tr>
             <td style="padding: 10px;"> Last Name: </td>
-            <td> <input name="lastname" required="" size="50" type="text" /></td>
+            <td> <input id="lastname" name="lastname" required="" size="50" type="text" /></td>
 		</tr>        
 		<tr>
             <td style="padding: 10px;"> Email: </td>
-            <td> <input name="email" required="" size="50" type="email" /></td>
+            <td> <input id="email" name="email" required="" size="50" type="email" /></td>
 		</tr>        
         <tr>
             <td style="padding: 10px;"> Condition: </td>
@@ -132,11 +132,11 @@
 		}); 
 	}
 	    
-	function identify_event(firstname, lastname, email, condition){
+	function identify_event(first, last, email, condition){
 		var id = Math.floor(Math.random() * 10000000) + 1;
 		
 		analytics.identify(id, {
-                  name: firstname.concat(" ", lastname),
+                  name: first.concat(" ", last),
                   email: email,
                   firstname: first,
                   lastname: last,
