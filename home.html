@@ -86,12 +86,15 @@
 		<tr>
 		    <td colspan="3" align="center">
 			<br /><br />
+			<input id="carted" name="carted" type="text" hidden/>
 			<input type="button" value="Check Out" onclick="track_checkout()">
 		    </td>
 		</tr>
 
 	    </table>
 	</div> 
+
+	<input type="button" value="Block Event" onclick="track_blockevent()">
 
     <script>
 
@@ -147,6 +150,7 @@
 	}
       
 	function track_event(product_name, product_ndc){
+		 document.getElementById('carted').value = product_name;
 		 analytics.track('Product Carted', {
 		    name: product_name,
 		    ndc: product_ndc
@@ -158,6 +162,13 @@
 		    url: '/home.html'
 		  });          
         }
+	    
+	function track_blockevent(){
+		 analytics.track('Block Event', {
+		    name: corrupt,
+		    ndc: invalid
+		  });
+	}
     </script>
 </body>
 
