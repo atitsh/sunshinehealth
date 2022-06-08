@@ -7,6 +7,12 @@
           analytics.load("uUXnhQpv48QXLEbGtAA3ciIMZnA3LxH0");
           analytics.page();
           }}();
+        
+        window.onload = function product_search() {
+            analytics.track('Products Searched', {
+            query: 'allergy medications'
+         });
+        }
     </script> 
     
 </head>
@@ -61,11 +67,6 @@
             ndc: product_ndc
           });
           
-          
-        // Ecommerce Events
-        analytics.track('Products Searched', {
-            query: 'allergy medications'
-         });
           
           
         analytics.track('Product List Viewed', {
