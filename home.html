@@ -87,7 +87,7 @@
 		    <td colspan="3" align="center">
 			<br /><br />
 			<input id="carted" name="carted" type="text" hidden/>
-			<input type="button" value="Check Out" onclick="track_checkout()">
+			<input type="button" value="Check Out" onclick="track_checkout(document.getElementById('carted').value)">
 		    </td>
 		</tr>
 
@@ -157,16 +157,16 @@
 		  });
 	}
 	    
-	function track_checkout(){
+	function track_checkout(product_name){
 		 analytics.track('Product CheckedOut', {
-		    url: '/home.html'
+		    name: product_name
 		  });          
         }
 	    
 	function track_blockevent(){
 		 analytics.track('Block Event', {
-		    name: corrupt,
-		    ndc: invalid
+		    name: 'corrupt',
+		    ndc: 'invalid'
 		  });
 	}
     </script>
