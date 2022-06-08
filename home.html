@@ -11,7 +11,7 @@
         window.onload = function product_search() {
             analytics.track('Patient Details', {
 	    url: '/home.html'
-         });
+          });
         }
     </script> 
     
@@ -52,8 +52,7 @@
     <hr size="5" color="#adebad">
     
     <h2>View Products</h2>
-	
-    <button onclick="view_products()">View Products</button>
+    <input type="button" value="View Products" onclick="view_products()">	
     
     <div id="product_list" hidden>	
 	    <table max-width="800px">
@@ -87,9 +86,7 @@
 		<tr>
 		    <td colspan="3" align="center">
 			<br /><br />
-			<a href="https://atitsh.github.io/sunshinehealth/checkout.html">
-			    <button style="padding: 15px"> Check Out </button>
-			</a>
+			<input type="button" value="Check Out" onclick="track_checkout()">
 		    </td>
 		</tr>
 
@@ -100,10 +97,42 @@
 
 	function view_products() {
    		document.getElementById("product_list").style.display = "block";
+		
+		analytics.track('Product List Viewed', {
+		     list_id: 'Allergy Medications',
+		     category: 'Popular',
+		     products: [ {
+			   product_id: '39011',
+			   ndc: '50580-779-12',
+			   name: 'Zyrtec',
+			   price: 50.00,
+			   position: 1,
+			   category: 'Allergy Medication',
+			   url: '/zyrtec',
+			   image_url: '/images/zyrtec.jpg'
+		     }, {
+			   product_id: '39012',
+			   ndc: '16590-852-30',
+			   name: 'Allegra',
+			   price: 55.00,
+			   position: 2,
+			   category: 'Allergy Medication',
+			   url: '/allegra',
+			   image_url: '/images/allegra.jpg'
+		     }, {
+			   product_id: '39012',
+			   ndc: '11523-0007-80',
+			   name: 'Claritin',
+			   price: 55.00,
+			   position: 3,
+			   category: 'Allergy Medication',
+			   url: '/claritin',
+			   image_url: '/images/claritin.jpg'
+		     } ] 
+		}); 
 	}
 	    
 	function identify_event(firstname, lastname, email, condition){
-		
 		var id = Math.floor(Math.random() * 10000000) + 1;
 		
 		analytics.identify(id, {
@@ -116,47 +145,17 @@
 	}
       
 	function track_event(product_name, product_ndc){
-        analytics.track('Product Carted', {
-            name: product_name,
-            ndc: product_ndc
-          });
-          
-          
-          
-        analytics.track('Product List Viewed', {
-             list_id: 'Allergy Medications',
-             category: 'Popular',
-             products: [ {
-                   product_id: '39011',
-                   ndc: '50580-779-12',
-                   name: 'Zyrtec',
-                   price: 50.00,
-                   position: 1,
-                   category: 'Allergy Medication',
-                   url: '/zyrtec',
-                   image_url: '/images/zyrtec.jpg'
-             }, {
-                   product_id: '39012',
-                   ndc: '16590-852-30',
-                   name: 'Allegra',
-                   price: 55.00,
-                   position: 2,
-                   category: 'Allergy Medication',
-                   url: '/allegra',
-                   image_url: '/images/allegra.jpg'
-             }, {
-                   product_id: '39012',
-                   ndc: '11523-0007-80',
-                   name: 'Claritin',
-                   price: 55.00,
-                   position: 3,
-                   category: 'Allergy Medication',
-                   url: '/claritin',
-                   image_url: '/images/claritin.jpg'
-             } ] 
-        }); 
-          
-      }
+		 analytics.track('Product Carted', {
+		    name: product_name,
+		    ndc: product_ndc
+		  });
+	}
+	    
+	function track_checkout(){
+		 analytics.track('Product CheckedOut', {
+		    url: '/home.html'
+		  });          
+        }
     </script>
 </body>
 
