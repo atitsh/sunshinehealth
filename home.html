@@ -19,10 +19,42 @@
 
 <body>
     <h1>Sunshine Health</h1>
-    <h2>View Products</h2>
+    
+	<h2>Record Patient Condition</h2>
+   
+	<table max-width="800px">
+		<tr>
+            <td style="padding: 10px;"> First Name: </td>
+            <td> <input name="firstname" required="" size="50" type="text" /></td>
+		</tr>        
+        <tr>
+            <td style="padding: 10px;"> Last Name: </td>
+            <td> <input name="lastname" required="" size="50" type="text" /></td>
+		</tr>        
+		<tr>
+            <td style="padding: 10px;"> Email: </td>
+            <td> <input name="email" required="" size="50" type="email" /></td>
+		</tr>        
+        <tr>
+            <td style="padding: 10px;"> Condition: </td>
+            <td> <select name="condition" id="condition">
+							  <option value="Diabetic">Allergy</option>
+							  <option value="Diabetic">Diabetic</option>
+                              <option value="Pre-diabetic">Pre-diabetic</option>
+						</select>
+            </td>
+		</tr>        
+    </table> 
+    <br/>
+    <button style="padding: 10px">Submit</button>
+    <br>&nbsp;</br>
+    
+    <hr size="5" color="#adebad">
+    
+    <h2>Allergy Products</h2>
+    
     <table max-width="800px">
         <tr>
-
             <td style="padding: 10px;">
                 <img src="https://atitsh.github.io/sunshinehealth/images/zyrtec_main.webp" width="200px"></img>
             </td>
