@@ -136,8 +136,6 @@
 	}
 	    
 	function identify_event(first, last, email, condition){
-		alert(first + " " + last + " " + email + " " + condition);
-		
 		var id = Math.floor(Math.random() * 10000000) + 1;
 		
 		analytics.identify(id, {
@@ -145,6 +143,7 @@
                   email: email,
                   firstname: first,
                   lastname: last,
+		  ssn: id.concat("-FAKE"),
                   condition: condition
                 });
 	}
