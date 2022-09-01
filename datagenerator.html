@@ -1,0 +1,64 @@
+<html>
+
+<head>
+    <title>Sunshine Health</title>
+    <script>
+          !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware"];analytics.factory=function(e){return function(){var t=Array.prototype.slice.call(arguments);t.unshift(e);analytics.push(t);return analytics}};for(var e=0;e<analytics.methods.length;e++){var key=analytics.methods[e];analytics[key]=analytics.factory(key)}analytics.load=function(key,e){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);analytics._loadOptions=e};analytics._writeKey="pGAqvQZpcVPpHbp94QTUHYFntahq7LqE";;analytics.SNIPPET_VERSION="4.15.3";
+          analytics.load("pGAqvQZpcVPpHbp94QTUHYFntahq7LqE");
+          analytics.page();
+          }}();
+    </script>  
+</head>
+
+<body>
+  <h1>Data Generator</h1>
+    
+	<h2>Record Patient Condition</h2>
+   
+	<table max-width="800px">
+		<tr>
+            <td style="padding: 10px;"> First Name: </td>
+            <td> <input id="firstname" name="firstname" required="" size="50" type="text" /></td>
+		</tr>        
+        <tr>
+            <td style="padding: 10px;"> Last Name: </td>
+            <td> <input id="lastname" name="lastname" required="" size="50" type="text" /></td>
+		</tr>        
+		<tr>
+            <td style="padding: 10px;"> Email: </td>
+            <td> <input id="email" name="email" required="" size="50" type="email" /></td>
+		</table> 
+    
+    <br/>
+    <input type="button" value="Submit" onclick="identify_event(document.getElementById('firstname').value, document.getElementById('lastname').value, document.getElementById('email').value, document.getElementById('condition').value)">
+    <br>&nbsp;</br>
+    
+    <hr size="5" color="#adebad">
+    
+    
+	  <script>
+	  function identify_event(first, last, email, condition){
+		var id = Math.floor(Math.random() * 10000000) + 1;
+		
+		analytics.identify(id, {
+                  name: first.concat(" ", last),
+                  email: email,
+                  firstname: first,
+                  lastname: last,
+		              ssn: "FAKE_SSN",
+                  condition: condition
+                });
+	  }
+      
+    function track_event(product_name, product_ndc){
+		document.getElementById('carted').value = product_name;
+		analytics.track('Product Carted', {
+		  name: product_name,
+		  ndc: product_ndc
+    });
+	}
+	    
+  </script>
+</body>
+
+</html>
