@@ -17,45 +17,43 @@
    
 	<table max-width="800px">
 		<tr>
-            <td style="padding: 10px;"> First Name: </td>
-            <td> <input id="firstname" name="firstname" required="" size="50" type="text" /></td>
+	            <td style="padding: 10px;"> First Name: </td>
+        	    <td> <input id="firstname" name="firstname" required="" size="50" type="text" /></td>
 		</tr>        
-        <tr>
-            <td style="padding: 10px;"> Last Name: </td>
-            <td> <input id="lastname" name="lastname" required="" size="50" type="text" /></td>
+	        <tr>
+        	    <td style="padding: 10px;"> Last Name: </td>
+	            <td> <input id="lastname" name="lastname" required="" size="50" type="text" /></td>
 		</tr>        
-		<tr>
-            <td style="padding: 10px;"> Email: </td>
-            <td> <input id="email" name="email" required="" size="50" type="email" /></td>
-		</table> 
+	</table> 
     
     <br/>
-    <input type="button" value="Submit" onclick="identify_event(document.getElementById('firstname').value, document.getElementById('lastname').value, document.getElementById('email').value)">
+    <input type="button" value="Submit" onclick="identify_event(document.getElementById('firstname').value, document.getElementById('lastname').value)">
     <br>&nbsp;</br>
     
     <hr size="5" color="#adebad">
     
     
 	  <script>
-	  function identify_event(first, last, email){
+	  function identify_event(first, last){
 		var id = Math.floor(Math.random() * 10000000) + 1;
+		var results = [
+			  "Normal",
+			  "Abnormal",
+			  "Critical"];
+		var result = results[Math.floor(Math.random()*results.length)];  
 		
 		analytics.identify(id, {
                   name: first.concat(" ", last),
-                  email: email,
+                  email: first.concat("@", last, ".com"),
                   firstname: first,
                   lastname: last
                 });
-	  }
-      
-    function track_event(product_name, product_ndc){
-		document.getElementById('carted').value = product_name;
-		analytics.track('Product Carted', {
-		  name: product_name,
-		  ndc: product_ndc
-    });
-	}
-	    
+		  
+		analytics.track('Lab Results', {
+		  lab_test_name: "HbA1c",
+		  lab_test_result: result
+		});
+	  }         
   </script>
 </body>
 
