@@ -49,6 +49,14 @@
                   lastname: last,
 		  ok_to_email: "true"
                 });
+		
+		  
+		analytics.track('Provider Search', {
+		  speciality: "Family Medicine",
+		  location: "95113",
+		  userId: id
+		});
+		  
 		  
 		analytics.track('Lab Results', {
 		  lab_test_name: "HbA1c",
