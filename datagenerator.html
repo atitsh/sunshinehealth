@@ -54,20 +54,9 @@
 		analytics.track('Provider Search', {
 		  speciality: "Family Medicine",
 		  location: "95113",
-		  userId: id
-		});
-		  
-		  
-		analytics.track('Lab Results', {
-		  lab_test_name: "HbA1c",
-		  lab_test_result: result,
-		  userId: id
-		});
-		  
-		analytics.track('Appointment Scheduled', {
-		  lab_test_name: "HbA1c",
-		  lab_test_result: result,
-		  userId: id
+		  userId: id,
+		  email: first.concat("@", last, ".com"),
+		  event: "Provider Search"	
 		});
 	  }         
   </script>
