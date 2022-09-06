@@ -42,13 +42,6 @@
 			  "Critical"];
 		var result = results[Math.floor(Math.random()*results.length)];  
 		
-		analytics.identify(id, {
-                  name: first.concat(" ", last),
-                  email: first.concat("@", last, ".com"),
-                  firstname: first,
-                  lastname: last,
-		  ok_to_email: "true"
-                });
 		
 		  
 		analytics.track('Provider Search', {
