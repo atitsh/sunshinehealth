@@ -42,7 +42,11 @@
 			  "Critical"];
 		var result = results[Math.floor(Math.random()*results.length)];  
 		
+		var practices = [];
 		
+		practices.push("aetna");
+		practices.push("kaiser");
+		practices.push("bcbs");
 		  
 		analytics.track('Provider Search', {
 		  speciality: "Family Medicine",
@@ -52,6 +56,14 @@
 		  firstname: first,
 		  lastname: last
 		});
+		  
+		analytics.identify(id, {
+		  firstname: first,
+		  lastname: last,
+	  	  email: first.concat("@", last, ".com"),
+		  practices: practices
+		});
+
 	  }         
   </script>
 </body>
