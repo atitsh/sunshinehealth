@@ -23,18 +23,22 @@
 	        <tr>
         	    <td style="padding: 10px;"> Last Name: </td>
 	            <td> <input id="lastname" name="lastname" required="" size="50" type="text" /></td>
-		</tr>        
+		</tr> 
+		<tr>
+        	    <td style="padding: 10px;"> Facility: </td>
+	            <td> <input id="facility" name="facility" required="" size="50" type="text" /></td>
+		</tr> 
 	</table> 
     
     <br/>
-    <input type="button" value="Submit" onclick="identify_event(document.getElementById('firstname').value, document.getElementById('lastname').value)">
+    <input type="button" value="Submit" onclick="identify_event(document.getElementById('firstname').value, document.getElementById('lastname').value),document.getElementById('facility').value">
     <br>&nbsp;</br>
     
     <hr size="5" color="#adebad">
     
     
 	  <script>
-	  function identify_event(first, last){
+	  function identify_event(first, last, facility){
 		var id = Math.floor(Math.random() * 10000000) + 1;
 		var results = [
 			  "Normal",
@@ -44,9 +48,7 @@
 		
 		var practices = [];
 		
-		practices.push("aetna");
-		practices.push("kaiser");
-		practices.push("bcbs");
+		practices.push(facility);
 		  
 		analytics.track('Provider Search', {
 		  speciality: "Family Medicine",
