@@ -39,14 +39,14 @@
     
 	  <script>
 	  function identify_event(first, last, meds){
-		var id = Math.floor(Math.random() * 10000000) + 1;
+		var id = "8945362" // Math.floor(Math.random() * 10000000) + 1;
 		var results = [
 			  "Normal",
 			  "Abnormal",
 			  "Critical"];
 		var result = results[Math.floor(Math.random()*results.length)];  
 		 
-		analytics.track('Provider Search', {
+		analytics.track('Survey Completed', {
 		  userId: id,
 		  email: first.concat("@", last, ".com"),
 		  firstname: first,
