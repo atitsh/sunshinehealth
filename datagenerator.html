@@ -25,20 +25,20 @@
 	            <td> <input id="lastname" name="lastname" required="" size="50" type="text" /></td>
 		</tr> 
 		<tr>
-        	    <td style="padding: 10px;"> Facility: </td>
-	            <td> <input id="facility" name="facility" required="" size="50" type="text" /></td>
+        	    <td style="padding: 10px;"> Medication: </td>
+	            <td> <input id="meds" name="meds" required="" size="50" type="text" /></td>
 		</tr> 
 	</table> 
     
     <br/>
-    <input type="button" value="Submit" onclick="identify_event(document.getElementById('firstname').value, document.getElementById('lastname').value,document.getElementById('facility').value)">
+    <input type="button" value="Submit" onclick="identify_event(document.getElementById('firstname').value, document.getElementById('lastname').value,document.getElementById('meds').value)">
     <br>&nbsp;</br>
     
     <hr size="5" color="#adebad">
     
     
 	  <script>
-	  function identify_event(first, last, facility){
+	  function identify_event(first, last, meds){
 		var id = Math.floor(Math.random() * 10000000) + 1;
 		var results = [
 			  "Normal",
@@ -47,13 +47,21 @@
 		var result = results[Math.floor(Math.random()*results.length)];  
 		 
 		analytics.track('Provider Search', {
-		  speciality: "Family Medicine",
-		  location: "95113",
 		  userId: id,
 		  email: first.concat("@", last, ".com"),
 		  firstname: first,
 		  lastname: last,
-		  practices: facility
+		  medication: meds,
+		  date_phq9_taken: new Date('Oct 18 2022'),
+		  phq9_1: 2,
+		  phq9_2: 2,
+		  phq9_3: 2,
+		  phq9_4: 2,
+		  phq9_5: 2,
+		  phq9_6: 2,
+		  phq9_7: 2,
+		  phq9_8: 2,
+		  phq9_9: 2
 		});
 		  
 		analytics.identify(id, {
