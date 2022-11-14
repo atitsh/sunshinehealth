@@ -46,35 +46,12 @@
 			  "Critical"];
 		var result = results[Math.floor(Math.random()*results.length)];  
 		 
-		analytics.track('Medications', {
+				  
+		analytics.track('Provider Search', {
 		  userId: id,
-		  medication: meds,
-		});
-		  
-		analytics.track('Medications', {
-		  userId: id,
-		  medication: "Vitamins",
-		});
-		  
-		analytics.track('Survey Questionnaire', {
-		  userId: id,
-		  surveyId: 132525, 	
-		  question: "PHQ-9-1",
-		  score: 2	
-		});
-		 
-		analytics.track('Survey Questionnaire', {
-		  userId: id,
-		  surveyId: 132525, 	
-		  question: "PHQ-9-2",
-		  score: 1	
-		});
-		  
-		analytics.track('Survey Questionnaire', {
-		  userId: id,
-		  surveyId: 132525, 	
-		  question: "PHQ-9-3",
-		  score: 3	
+		  email: "Mike@James.com",
+                  firstname: "Mike",
+                  lastname: "James",
 		});
 		  
 		analytics.identify(id, {
