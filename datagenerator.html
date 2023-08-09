@@ -53,16 +53,33 @@
 			  "Abnormal",
 			  "Critical"];
 		var result = results[Math.floor(Math.random()*results.length)];  
-		 
+		
+		  var consent = window.OnetrustActiveGroups;
+		  const myArray = consent.split(","); 
+
+		var personalization = false;
+		var ad = false;
+		var functional= false;
+
+
+		for (let i = 1; i < 5; i++) {
+			if(myArray[i] == "C0001") {
+  				personalization = true;
+  			}else if(myArray[i] == "C0003") {
+  				functional = true;
+  			} if(myArray[i] == "C0004") {
+  				ad = true;
+  			}
+		}
 				  
-		analytics.track("Page Viewed", {
+		  analytics.track("Page Viewed", {
  			 userId: id
 		       }, {
     			consent: {
      			   categoryPreferences: {
-          			  Personalization: false,
-				  C0004: false,
-				  Ad: false
+          			  "Personalization": personalization,
+				  "Ad": ad,
+				  "Functional": functional
        				 }
     			}
 		});
