@@ -50,14 +50,13 @@
 		 
 				  
 		analytics.track("Page Viewed", {
- 			 userId: id,
-			 context: {
-		          consent: {
-		            categoryPreferences: {
-		              Personalization: true
-		            }
-		          }
-		       }
+ 			 userId: id
+		       }, {
+    			consent: {
+     			   categoryPreferences: {
+          			  Personalization: true
+       				 }
+    			}
 		});
 		 
 	  }         
