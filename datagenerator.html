@@ -58,9 +58,9 @@
 			  "Abnormal",
 			  "Critical"];
 		var result = results[Math.floor(Math.random()*results.length)];  
-		
-		  var consent = window.OnetrustActiveGroups;
-		  const myArray = consent.split(","); 
+		/*
+		var consent = window.OnetrustActiveGroups;
+		const myArray = consent.split(","); 
 
 		var personalization = false;
 		var ad = false;
@@ -87,6 +87,12 @@
 				  "Functional": functional
        				 }
     			}
+		});*/
+		   analytics.track("Page Viewed", {
+ 			 userId: id,
+			 email: "john@doe.com",
+			 some: "test"
+		       }
 		});
 		 
 	  }         
