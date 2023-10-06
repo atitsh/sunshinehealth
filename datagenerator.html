@@ -36,33 +36,28 @@
 	            <td> <input id="lastname" name="lastname" required="" size="50" type="text" /></td>
 		</tr> 
 		<tr>
-        	    <td style="padding: 10px;"> Medication: </td>
-	            <td> <input id="meds" name="meds" required="" size="50" type="text" /></td>
+        	    <td style="padding: 10px;"> Email: </td>
+	            <td> <input id="email" name="email" required="" size="50" type="text" /></td>
 		</tr> 
 	</table> 
     
     <br/>
-    <input type="button" value="Submit" onclick="identify_event(document.getElementById('firstname').value, document.getElementById('lastname').value,document.getElementById('meds').value)">
+    <input type="button" value="Track Event" onclick="track_event(document.getElementById('firstname').value, document.getElementById('lastname').value,document.getElementById('email').value)">
     <br>&nbsp;</br>
     
     <hr size="5" color="#adebad">
     
     
 	  <script>
-	  function identify_event(first, last, meds){
+	  function track_event(first, last, meds){
 		var id = Math.floor(Math.random() * 10000000) + 1;
-		var results = [
-			  "Normal",
-			  "Abnormal",
-			  "Critical"];
-		var result = results[Math.floor(Math.random()*results.length)];  
 		
-		analytics.track("Submit Event", {
+		analytics.track("Tracking Event", {
  			 userId: id,
-			 email: "john@doe.com",
-			 some: "test"
+			 email: email,
+			 name: first.concat(" ",last)
 		});
-		 
+		alert("Track event submitted.");
 	  }         
   </script>
 </body>
