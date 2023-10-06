@@ -44,12 +44,14 @@
     <br/>
     <input type="button" value="Track Event" onclick="track_event(document.getElementById('firstname').value, document.getElementById('lastname').value,document.getElementById('email').value)">
     <br>&nbsp;</br>
+    <input type="button" value="Identify Event" onclick="identify_event(document.getElementById('firstname').value, document.getElementById('lastname').value,document.getElementById('email').value)">
+    <br>&nbsp;</br>
     
     <hr size="5" color="#adebad">
     
     
 	  <script>
-	  function track_event(first, last, meds){
+	  function track_event(first, last, email){
 		var id = Math.floor(Math.random() * 10000000) + 1;
 		
 		analytics.track("Tracking Event", {
@@ -58,7 +60,18 @@
 			 name: first.concat(" ",last)
 		});
 		alert("Track event submitted.");
-	  }         
+	  } 
+
+	function identify_event(first, last, email){
+		var id = Math.floor(Math.random() * 10000000) + 1;
+		
+		analytics.identify(id, {
+			 email: email,
+			 name: first.concat(" ",last)
+		});
+		
+		alert("Identify event submitted.");
+	  } 
   </script>
 </body>
 
