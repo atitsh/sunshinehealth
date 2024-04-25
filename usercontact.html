@@ -43,15 +43,15 @@
 <div class="banner"></div>
 <br />
 <div class="container">
-  <form id="contactForm">
+  
     <label for="phoneNumber">Phone Number:</label>
     <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Enter your phone number" required>
 
     <input type="submit" value="Submit" onclick="submitForm()">
-  </form>
+  
 </div>
 
-<input type="text" id="response" name="response">
+<div id="response"></div>
 
 <script>
   function submitForm() {
@@ -69,15 +69,16 @@
 fetch(url, options)
   .then(response => {
     if (!response.ok) {
-      throw new Error('Network response was not ok');
+      throw new Error(`HTTP error! Status: ${response.status}`);
     }
-    document.getElementById('response').value = reponse;
     return response.json();
   })
-  .then(data => console.log(data))
-  .catch(error => console.error('There was a problem with your fetch operation:', error));
-  
-  }
+  .then(data => {
+    document.getElementById("response").innerHTML = "<pre>" + JSON.stringify(data, null, 2) + "</pre>";
+  })
+  .catch(error => {
+    document.getElementById("response").innerHTML = "<pre>Error: " + error.message + "</pre>";
+  });
 </script>
 
 </body>
