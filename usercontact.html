@@ -37,6 +37,21 @@
       margin-bottom: 10px;
     }
   </style>
+</head>
+<body>
+
+<div class="banner"></div>
+<br />
+<div class="container">
+  
+    <label for="phoneNumber">Phone Number:</label>
+    <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Enter your phone number">
+  
+    <button onclick="callProfiles()">Call Profile</button>
+
+</div>
+
+<div id="response"></div>
 
   <script>
   function callProfiles() {
@@ -64,25 +79,8 @@ fetch(url, options)
   .catch(error => {
     document.getElementById("response").innerHTML = "<pre>Error: " + error.message + "</pre>";
   });
+  }
 </script>
-  
-</head>
-<body>
-
-<div class="banner"></div>
-<br />
-<div class="container">
-  
-    <label for="phoneNumber">Phone Number:</label>
-    <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Enter your phone number">
-  
-    <button onclick="callProfiles()">Call Profile</button>
-
-</div>
-
-<div id="response"></div>
-
-
 
 </body>
 </html>
