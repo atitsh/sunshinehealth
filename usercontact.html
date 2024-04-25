@@ -46,15 +46,14 @@
   
     <label for="phoneNumber">Phone Number:</label>
     <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Enter your phone number" required>
-
-    <input type="submit" value="Submit" onclick="submitForm()">
+    <button onclick="callProfiles()">
   
 </div>
 
 <div id="response"></div>
 
 <script>
-  function submitForm() {
+  function callProfiles() {
       const phoneNumber = document.getElementById('phoneNumber').value;
 
       const url = 'https://profiles.segment.com/v1/spaces/spa_tcxKkXTEzbvUW5S4Zk6duY/collections/users/profiles/user_id:${phoneNumber}/traits';
