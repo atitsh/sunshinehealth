@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Contact User App</title>
+  <style>
+    /* CSS for styling purposes */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .banner {
+      width: 100%;
+      height: 250px;
+      background-image: url('https://www.rootinc.com/wp-content/uploads/2020/04/communication-webinar-banner-02.png');
+      background-size: cover;
+      background-position: center;
+    }
+    .container {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    input[type="text"], input[type="submit"] {
+      width: calc(100% - 22px);
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+      display: inline-block;
+    }
+    label {
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="banner"></div>
+<br />
+<div class="container">
+  <form id="contactForm">
+    <label for="phoneNumber">Phone Number:</label>
+    <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Enter your phone number" required>
+
+    <input type="submit" value="Submit" onclick="submitForm()">
+  </form>
+</div>
+
+<input type="text" id="response" name="response">
+
+<script>
+  function submitForm() {
+      const phoneNumber = document.getElementById('phoneNumber').value;
+
+      const url = 'https://profiles.segment.com/v1/spaces/spa_tcxKkXTEzbvUW5S4Zk6duY/collections/users/profiles/user_id:${phoneNumber}/traits';
+
+      const options = {
+        method: 'GET', 
+        headers: {
+          'Authorization': 'Basic am9jVzNvbDdaSFc1VzEzWUFLMkJ6MVlkdG9zTGlEdWhCRlJZSGFwOFZMRndUTENkX0RIVWwwUUxIbERrTEg2ZnpTT2p6b044b1UyZ2J0X2F0anZfa0R0NFk5al9rQWlDUGxPNENRSmdoUVZhSVJTNXF0bzNiWjIyc3NrN2ZleU1aWWdhNVhhV2ZqMjItUWoybDNhbjBPUmRTdEhzOE9tYmZlS0VSRThsNkdVTFRQUFZSMTRldU4xTW5ta1JTNzF1eGJTaUJRamxCbmJXQU1JWkNWRkJmanpvNlhELXFzTzBpZ3czWElmQ2lVMVVjdDFpb3hLbFd1SUJPTXJ5T0liNXNHclhxbWN4Mi1CQmsybXJadmlCM1dNdEVuRT06'
+          }
+      };
+
+fetch(url, options)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    document.getElementById('response').value = reponse;
+    return response.json();
+  })
+  .then(data => console.log(data))
+  .catch(error => console.error('There was a problem with your fetch operation:', error));
+  
+  }
+</script>
+
+</body>
+</html>
