@@ -18,7 +18,7 @@
     .banner {
       width: 100%;
       height: 150px;
-      background-image: url('your-image-url.jpg');
+      background-image: url('http://www.quickvisa.in/wp-content/uploads/2017/10/contactus-banner.jpg');
       background-size: cover;
       background-position: center;
     }
@@ -43,13 +43,13 @@
 
 <div class="banner"></div>
 
-<div class="container">
+<div class="container" >
   <form id="contactForm">
     <label for="phoneNumber">Phone Number:</label>
     <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Enter your phone number" required>
-    <input type="checkbox" id="consent" name="consent">
-    <label for="consent">Consent to receive SMS or WhatsApp:</label>
-    
+     <label>
+      <input type="checkbox" id="consent" name="consent"> By submitting this form and entering your phone number above, you agree to receive automated text messages from Sunshine Health and agree to our Terms and Privacy. Consent is not a condition of any purchase. Msg frequency varies. Msg and data rates may apply.
+    </label>
 
     <input type="submit" value="Submit" onclick="submitForm()">
   </form>
