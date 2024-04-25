@@ -17,7 +17,7 @@
     }
     .banner {
       width: 100%;
-      height: 250px;
+      height: 300px;
       background-image: url('https://soapart.sg/wp-content/uploads/2021/01/Contact-Us-Banner-1.jpg');
       background-size: cover;
       background-position: center;
@@ -42,6 +42,11 @@
       display: inline-block;
       margin-bottom: 10px;
     }
+    .label_subtext {
+    	color: grey;
+        font-size: 13px;
+        font-style: italic;
+    }
   </style>
 </head>
 <body>
@@ -52,7 +57,7 @@
     <label for="phoneNumber">Phone Number:</label>
     <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Enter your phone number" required>
 
-    <label style="color: grey">
+    <label class=".label_subtext">
       <input type="checkbox" id="consent" name="consent"> By submitting this form and entering your phone number above, you agree to receive automated text messages from Sunshine Health and agree to our Terms and Privacy. Consent is not a condition of any purchase. Msg frequency varies. Msg and data rates may apply.
     </label>
 
