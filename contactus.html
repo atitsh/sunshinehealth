@@ -49,7 +49,6 @@
 <div class="banner"></div>
 <br />
 <div class="container">
-  <form id="contactForm">
     <label for="phoneNumber">Phone Number:</label>
     <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Enter your phone number" required>
 
@@ -57,22 +56,19 @@
       <input type="checkbox" id="consent" name="consent"> By submitting this form and entering your phone number above, you agree to receive automated text messages from Sunshine Health and agree to our Terms and Privacy. Consent is not a condition of any purchase. Msg frequency varies. Msg and data rates may apply.
     </label>
 
-    <input type="submit" value="Submit" onclick="submitForm()">
-  </form>
+    <button onclick="submitForm()">
+  
 </div>
 
 <script>
   function submitForm() {
-    // Fetching values from the form
+    
     const phoneNumber = document.getElementById('phoneNumber').value;
     const consent = document.getElementById('consent').checked;
-
-    // Generating a random userId
+    
     const userId = document.getElementById('phoneNumber').value;
 
-    // Fire Segment identify event
-    // Assuming you have already included the Segment Analytics library in your project
-    // Replace 'YOUR_WRITE_KEY' with your actual Segment write key
+    
     analytics.identify(userId, {
       phoneNumber: phoneNumber,
       consent: consent
