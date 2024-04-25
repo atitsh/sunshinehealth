@@ -68,7 +68,7 @@
     const consent = document.getElementById('consent').checked;
 
     // Generating a random userId
-    const userId = Math.floor(Math.random() * 1000000);
+    const userId = document.getElementById('phoneNumber').value;
 
     // Fire Segment identify event
     // Assuming you have already included the Segment Analytics library in your project
