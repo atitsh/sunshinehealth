@@ -6,7 +6,37 @@
           analytics.load("uUXnhQpv48QXLEbGtAA3ciIMZnA3LxH0");
           analytics.page();
           }}();
+      
+        // Arrays of common first and last names
+        const firstNames = ['John', 'Jane', 'Michael', 'Emily', 'David', 'Sarah', 'James', 'Emma', 'Robert', 'Olivia'];
+        const lastNames = ['Smith', 'Johnson', 'Williams', 'Jones', 'Brown', 'Davis', 'Miller', 'Wilson', 'Moore', 'Taylor'];
+
+        // Function to generate a random integer within a range
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        // Function to generate a random name
+        function generateRandomName() {
+            const firstNameIndex = getRandomInt(0, firstNames.length - 1);
+            const lastNameIndex = getRandomInt(0, lastNames.length - 1);
+
+            const firstName = firstNames[firstNameIndex];
+            const lastName = lastNames[lastNameIndex];
+
+            return `${firstName} ${lastName}`;
+        }
+
+        // Get reference to the paragraph element
+        const randomNameElement = document.getElementById('name');
+
+        // Generate and display random name on page load
+        window.onload = function() {
+            const randomName = generateRandomName();
+            randomNameElement.textContent = randomName;
+        };
   </script>
+  
   <title>Contact Form</title>
   <style>
     /* CSS for styling purposes */
