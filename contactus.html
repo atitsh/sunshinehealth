@@ -54,6 +54,9 @@
 <div class="banner"></div>
 <br />
 <div class="container">
+    <label for="phoneNumber">Name:</label>
+    <input type="text" id="name" name="name" placeholder="Enter your first and last name" required>
+
     <label for="phoneNumber">Phone Number:</label>
     <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Enter your phone number" required>
 
@@ -67,7 +70,8 @@
 
 <script>
   function submitForm() {
-    
+
+    const phoneNumber = document.getElementById('name').value;
     const phoneNumber = document.getElementById('phoneNumber').value;
     const consent = document.getElementById('consent').checked;
     
@@ -75,6 +79,7 @@
 
     
     analytics.identify(userId, {
+      name: name,
       phoneNumber: phoneNumber,
       consent: consent
     });
