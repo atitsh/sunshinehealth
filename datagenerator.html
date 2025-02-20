@@ -21,10 +21,14 @@
 </head>
 
 <body>
-  	<img src="https://onlinenutrition.cns.utexas.edu/wp-content/uploads/2018/11/GettyImages-823767128_high-1.jpg" width="800" height="300">
+  	<img src="https://techaccess.co.za/wp-content/uploads/2021/12/Black-Technology-LinkedIn-Banner-9.jpg" width="800" height="300">
 	<h1>Data Generator</h1>
    
 	<table max-width="800px">
+		<tr>
+        	    <td style="padding: 10px;"> User Id: </td>
+	            <td> <input id="userId" name="userId" required="" size="50" type="text" /></td>
+		</tr> 
 		<tr>
 	            <td style="padding: 10px;"> First Name: </td>
         	    <td> <input id="firstname" name="firstname" required="" size="50" type="text" /></td>
@@ -40,16 +44,16 @@
 	</table> 
     
     <br/>
-    <input type="button" value="Track Event" onclick="track_event(document.getElementById('firstname').value, document.getElementById('lastname').value,document.getElementById('email').value)">
+    <input type="button" value="Track Event" onclick="track_event(document.getElementById('userId').value, document.getElementById('firstname').value, document.getElementById('lastname').value,document.getElementById('email').value)">
     <br>&nbsp;</br>
-    <input type="button" value="Identify Event" onclick="identify_event(document.getElementById('firstname').value, document.getElementById('lastname').value,document.getElementById('email').value)">
+    <input type="button" value="Identify Event" onclick="identify_event(document.getElementById('userId').value, document.getElementById('firstname').value, document.getElementById('lastname').value,document.getElementById('email').value)">
     <br>&nbsp;</br>
     
        
     
 	  <script>
-	  function track_event(first, last, email){
-		var id = Math.floor(Math.random() * 10000000) + 1;
+	  function track_event(userId, first, last, email){
+		//var id = Math.floor(Math.random() * 10000000) + 1;
 		
 		analytics.track("Tracking Event", {
  			 userId: id,
@@ -59,12 +63,13 @@
 		alert("Track event submitted.");
 	  } 
 
-	function identify_event(first, last, email){
-		var id = Math.floor(Math.random() * 10000000) + 1;
+	function identify_event(userId, first, last, email){
+		//var id = Math.floor(Math.random() * 10000000) + 1;
 		
 		analytics.identify(id, {
-			 email: email,
-			 name: first.concat(" ",last)
+			userId: id, 
+			email: email,
+			name: first.concat(" ",last)
 		});
 		
 		alert("Identify event submitted.");
